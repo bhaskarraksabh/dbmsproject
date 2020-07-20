@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Jotorres Login Form</title>
+</head>
+<body>
+    <?php
+     print "true";
+     include ('config.php');
+     $query="SELECT * FROM Problems";
+     $result=mysqli_query($link,$query) or die("could not connect");
+     print $result;
+     while($rows=mysqli_fetch_array($result,MYSQLI_ASSOC))
+     {   
+      echo $rows['qid'];
+      echo $rows['question_name'];
+      echo $rows['tags'];
+      }
+      ?>
+</body>
+</html>
